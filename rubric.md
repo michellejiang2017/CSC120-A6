@@ -10,27 +10,27 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 ## Assignment Points:
 
-_____ 10 pts: The class contains at least 10 unit tests that identify bugs in the solution. Each bug is documented in the log
+___Y__ 10 pts: The class contains at least 10 unit tests that identify bugs in the solution. Each bug is documented in the log
 
 
 ## General Items:
 
-_____ 4 pts: Programs compile without errors or warnings
+___Y__ 4 pts: Programs compile without errors or warnings
 
-_____ 2 pts: Executes fully & consistently without crashing (exception/freeze)
+___Y__ 2 pts: Executes fully & consistently without crashing (exception/freeze)
 
-_____ 2 pt: Complies with style guidelines (missing items 1 pt each):
+___Y__ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
-      _____ Classes & class members all have Javadoc header comments
+      ___Y__ Classes & class members all have Javadoc header comments
 
-      _____ Clear and consistent indentation of bracketed sections
+      __Y___ Clear and consistent indentation of bracketed sections
 
-      _____ Adheres to Java conventions on naming & capitalization
+      __Y___ Adheres to Java conventions on naming & capitalization
 
-      _____ Methods & variables all have clear and accurate names
+      __Y___ Methods & variables all have clear and accurate names
 
-      _____ Methods avoid confusing side effects
+      __Y___ Methods avoid confusing side effects
 
-_____ 1 pt: All required files included with submission (including completed `rubric.md` file)
+___Y__ 1 pt: All required files included with submission (including completed `rubric.md` file)
 
-_____ 1 pt: `reflection.md` contains your reflection on the assignment, **including a detailed description of the tests you implemented and what they do**
+___Y__ 1 pt: `reflection.md` contains your reflection on the assignment, **including a detailed description of the tests you implemented and what they do**
