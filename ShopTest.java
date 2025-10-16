@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-// NOTE: TESTS SHOULD PASS IF CODE IS WORKING AND FAIL IF NOT
+
 /**
  * Unit tests for the ResaleShop and Computer classes.
  */
