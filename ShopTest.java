@@ -5,7 +5,6 @@ import org.junit.Test;
 // NOTE: TESTS SHOULD PASS IF CODE IS WORKING AND FAIL IF NOT
 /**
  * Unit tests for the ResaleShop and Computer classes.
- * Tests are designed to detect bugs in the provided implementation.
  */
 
 public class ShopTest {
@@ -25,7 +24,7 @@ public class ShopTest {
     }
 
     /**
-     * Checks that Computer constructor overrides initialized memory value
+     * Checks if Computer constructor overrides initialized memory value
      */
     @Test 
     public void testConstructorMemory() {
@@ -33,7 +32,7 @@ public class ShopTest {
     }
 
     /**
-     * Checks that Computer constructor overrides initialized price value 
+     * Checks if Computer constructor overrides initialized price value 
      */
     @Test 
     public void testConstructorPrice() {
@@ -41,7 +40,7 @@ public class ShopTest {
     }
 
     /**
-     * Checks that setOS method always updates OS to None rather than the newOS
+     * Checks if setOS method always updates OS to None rather than the newOS
      */
     @Test
     public void testNewOS() {
@@ -50,7 +49,7 @@ public class ShopTest {
     }
 
     /** 
-     * Checks that ResaleShop constructor initializes with default computer
+     * Checks if ResaleShop constructor initializes with default computer
      */
     @Test
     public void testEmptyShop() { 
@@ -58,7 +57,7 @@ public class ShopTest {
     }
 
     /**
-     * Checks that buy() method creates a new computer and ignores parameter
+     * Checks if buy() method creates a new computer and ignores parameter
      * @throws Exception if computer is already in inventory (required from buy() method)
      */
     @Test 
@@ -68,7 +67,7 @@ public class ShopTest {
     }
 
     /**
-     * Checks that buy() method does not throw exception for duplicate computers 
+     * Checks if buy() method does not throw exception for duplicate computers 
      * @throws Exception if computer is already in inventory (required from buy() method)
      */
     @Test
@@ -76,11 +75,11 @@ public class ShopTest {
         int initialSize = myShop.inventory.size();
         myShop.buy(myComputer);
         myShop.buy(myComputer);
-        assertNotEquals(initialSize+2, myShop.inventory.size()); // checks that duplicates were not added
+        assertNotEquals(initialSize+2, myShop.inventory.size()); // checks if duplicates were not added
     }
 
     /**
-     * Checks that sell() method does not throw exception if computer not in inventory
+     * Checks if sell() method does not throw exception if computer not in inventory
      * @throws Exception if computer is not in inventory (required from sell() method)
      */
     @Test 
@@ -94,13 +93,13 @@ public class ShopTest {
     /**
      * Checks if printInventory() goes out of bounds 
      */
-    @Test (expected = IndexOutOfBoundsException.class) // runtime exception --> THIS NEESD TO BE CHANGED COMPLETELY
+    @Test 
     public void testPrintInventory() { 
-        myShop.printInventory(); // change output string into variable then test variable? 
+        myShop.printInventory();
     }
 
     /**
-     * Checks that refurbish() updates OS when given null (instead of "None")
+     * Checks if refurbish() updates OS when given null (instead of "None")
      * @throws Exception if computer not in inventory (required from refurbish() method)
      */
     @Test
