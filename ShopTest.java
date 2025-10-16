@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
+// NOTE: TESTS SHOULD PASS IF CODE IS WORKING AND FAIL IF NOT
 /**
  * Unit tests for the ResaleShop and Computer classes.
  * Tests are designed to detect bugs in the provided implementation.
@@ -29,7 +29,7 @@ public class ShopTest {
      */
     @Test 
     public void testConstructorMemory() {
-        assertNotEquals(32, myComputer.memory);
+        assertEquals(32, myComputer.memory);
     }
 
     /**
@@ -37,7 +37,7 @@ public class ShopTest {
      */
     @Test 
     public void testConstructorPrice() {
-        assertNotEquals(1000, myComputer.price);
+        assertEquals(1000, myComputer.price);
     }
 
     /**
@@ -46,7 +46,7 @@ public class ShopTest {
     @Test
     public void testNewOS() {
         myComputer.setOS("newOS");
-        assertNotEquals("newOS", myComputer.operatingSystem);
+        assertEquals("newOS", myComputer.operatingSystem);
     }
 
     /** 
@@ -54,7 +54,7 @@ public class ShopTest {
      */
     @Test
     public void testEmptyShop() { 
-        assertFalse(myShop.inventory.isEmpty());
+        assertTrue(myShop.inventory.isEmpty());
     }
 
     /**
@@ -64,7 +64,7 @@ public class ShopTest {
     @Test 
     public void testBuyAddsComputer() throws Exception {
         myShop.buy(myComputer);
-        assertFalse(myShop.inventory.contains(myComputer));
+        assertTrue(myShop.inventory.contains(myComputer));
     }
 
     /**
@@ -76,7 +76,7 @@ public class ShopTest {
         int initialSize = myShop.inventory.size();
         myShop.buy(myComputer);
         myShop.buy(myComputer);
-        assertEquals(initialSize+2, myShop.inventory.size()); // checks that duplicates were not added
+        assertNotEquals(initialSize+2, myShop.inventory.size()); // checks that duplicates were not added
     }
 
     /**
@@ -88,15 +88,15 @@ public class ShopTest {
         Computer randomComp = new Computer("HP", "AMD", 256, 8, "Windows 8", 2010, 300);
         int initialSize = myShop.inventory.size();
         myShop.sell(randomComp);
-        assertEquals(initialSize, myShop.inventory.size());
+        assertNotEquals(initialSize, myShop.inventory.size());
     }
 
     /**
      * Checks if printInventory() goes out of bounds 
      */
-    @Test (expected = IndexOutOfBoundsException.class)
+    @Test (expected = IndexOutOfBoundsException.class) // runtime exception --> THIS NEESD TO BE CHANGED COMPLETELY
     public void testPrintInventory() { 
-        myShop.printInventory();
+        myShop.printInventory(); // change output string into variable then test variable? 
     }
 
     /**
@@ -106,7 +106,7 @@ public class ShopTest {
     @Test
     public void testRefurbishOS() throws Exception{ 
         myShop.refurbish(myShop.inventory.get(0), null);
-        assertNotSame(null, myShop.inventory.get(0).operatingSystem);
+        assertSame(null, myShop.inventory.get(0).operatingSystem);
     }
 
     /**
@@ -117,6 +117,6 @@ public class ShopTest {
     public void testRefurbishPrice() throws Exception{ 
         myShop.inventory.add(myComputer); 
         myShop.refurbish(myComputer, null);
-        assertNotEquals(250, myComputer.price);
+        assertEquals(250, myComputer.price);
     }
 }
